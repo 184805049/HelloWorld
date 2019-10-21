@@ -1,0 +1,166 @@
+//class Student{
+	
+	static String schoolname; 
+	
+	public static void speak(){
+		System.out.println("66666666666");
+		
+	}
+	
+}
+public class Example10 {
+
+	public static void main(String[] args) {
+		
+		
+		Student.speak();
+		
+		Student stu1=new Student();
+		Student stu2=new Student();
+		
+		Student.schoolname="aynu";
+		System.out.println("stu1="+stu1.schoolname);
+		
+	}
+
+}
+class Person{
+	
+	private int age;
+	private String name;
+	
+	public Person(){
+		
+		System.out.println("无参的构造方法被调用了");
+	}
+	public Person(int  age){
+		
+		//this(20,"-------");
+		this.age= age;
+		
+	}
+	public Person(String name){
+		this.name= name;
+	}
+	public Person(int  age,String  name){
+		this.age= age;
+		this.name= name;
+	}
+	
+	public void speak(){
+		System.out.println("name="+name+"   age="+age);
+	}
+	public void openMouth(){
+		this.speak();
+	}
+	
+	
+}
+public class Example07 {
+
+	public static void main(String [] args){
+		
+		Person p=new Person(18);
+		p.openMouth();
+		
+	}
+}
+//class Student{
+
+	private int score;
+	private String name;
+	
+	public int getScore(){
+		return score;
+	}
+	public void setScore(int score){
+		this.score=score;
+	}
+	
+	public String getString(){
+		return name;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	Student(){}
+	Student(int score,String name){
+		
+		this.score=score;
+		this.String=String;
+	}
+	
+}
+//class Person{
+//
+//String name;
+//int age;
+//
+//public Person(){
+//	
+//}
+//public Person(String con_name,int con_age){
+//	
+//	name=con_name;
+//	age=con_age;
+//}
+//public Person(String con_name){
+//	
+//	name=con_name;
+//}
+//public Person(int con_age){
+//	age=con_age;
+//}
+//public void speak(){
+//	System.out.println("name="+name+"  age="+age);
+//}
+//}
+
+
+public class Example7 {
+
+public static void main(String[] args) {
+	
+	Person p=new Person();
+	p.speak();
+	
+	Person p1=new Person("abc",18);
+	p1.speak();
+	
+	Person p2=new Person("aaaaaaa");
+	p2.speak();
+	
+	Person p3=new Person(1000000000);
+	p3.speak();
+	
+	
+}
+
+}
+class Person1{
+	
+	public void finalize(){
+		
+		System.out.println("对象将被当做垃圾回收");
+		
+	}
+	public void speak(){
+		
+		System.out.println("sadfsdf");
+	}
+	
+}
+public class Gc {
+
+	public static void main(String[] args) {
+	 
+		Person1 p=new Person1();
+		p=null;
+		
+		System.gc();
+		//p.speak;
+	}
+
+}
+

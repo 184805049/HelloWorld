@@ -1,0 +1,160 @@
+class Student{
+	
+	private int age;
+	private String name;
+	
+	public void setAge(int stuAge){
+		
+		if(stuAge<=0){
+			System.out.println("error");
+		}
+		else{
+			age=stuAge;
+		}
+		
+	}
+	public int getAge(){
+		return age;
+	}
+	
+	public void setName(String stuName){
+		
+		name=stuName;
+	}
+	public String getName(){
+		return name;
+	}
+	
+	public void introduce(){
+		
+		System.out.println("111name="+name+",2222age="+age);
+	}
+	
+}
+
+public class Example05{
+	
+	public static void main(String [] args){
+		
+		Student stu=new Student();
+		stu.setAge(2000);
+		stu.setName("-----");
+		
+		stu.introduce();
+		
+	}
+
+}
+//class Student{
+//
+//private String name; 
+//private int age;   
+//
+//public String getName(){
+//   
+//   return name;
+//}
+//
+//public void setName(String stuName){
+//   
+//   name=stuName;
+//}
+//public int getAge(){
+//   
+//   return age;
+//}
+//public void setAge(int stuAge){
+//   
+//   if(stuAge<=0){
+//	   System.out.println("false");
+//   }
+//   else{
+//	   age=stuAge;
+//   }
+//}
+//
+//
+//
+//public void introduce(){
+//	
+//	System.out.println("wo jin nian "+age+" sui,"+"name is "+name+".");
+//	
+//}
+//
+//}
+
+public class Example04{
+public static void main(String [] args){
+	
+	Student stu=new Student();
+	
+	stu.setName("huang zhi chao");
+	stu.setAge(1000);
+	
+	
+	stu.introduce();
+}
+}
+class Person{
+
+void say(){
+	System.out.println("wo shi yige ren");
+}
+}
+
+public class Example03 {
+         //垃圾自动回收机制
+	public static void main(String [] args){
+		
+		Person p=new Person();
+		p.say();
+		p=null;// cihou gai bianliang buzaizhixiangrenheyigeduixiang
+		p.say();//空指针异常
+			
+		
+	}
+}
+class Person{
+
+int age=1;// cheng yuan bian liang
+
+void speak(){
+	
+	int age=100;//ju bu bian liang 
+	System.out.println("wo jin nian "+age+" sui");
+}
+}
+public class Example02 {
+  
+public static void main(String [] args){
+
+Person p=new Person();//chuang jian yige person de duixiang
+Person p1=new Person();
+p.age=1800;//wei age shuxiangfuzhi
+p.speak();//diao yong dui xiang de fang fa
+p1.speak();
+}
+}//问题：有的时候eclipse并不会显示，但用命令行就可以看见，对于eclipse来说 只能调用成员赋值，不能直接赋值或者搞局部变量
+class Person{
+//ding yi yige fang fa ren lei
+int age;// cheng yuan bian liang 
+
+void speak(){//cheng yuan fang fa
+System.out.println("wo jin nian "+age+" sui");
+}
+}
+public class Example01 {
+
+public static void main(String [] args){
+
+Person p=new Person();//chuang jian yi ge person lei de shilihua duixiang 
+p.age=180;
+p.speak();
+}
+}
+
+
+
+
+
+

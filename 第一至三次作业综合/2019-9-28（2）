@@ -1,0 +1,43 @@
+
+public class DivideByMinusException extends Exception{//自定义的异常类 一般情况下需要继承自Exception类
+													//java自带的异常类的确可以解决很多问题，但是对于某些特殊的需要，我们还是得自定义异常
+	 DivideByMinusException(){
+		 
+		 super();
+	 }
+	 DivideByMinusException(String message){
+		 
+		 super(message);
+	 }
+	 
+}
+
+public class DivideByMinusException{
+	
+	 public static void main(String [] arge){
+		 
+		    try{
+		    	
+		        int result=divide(4,-2);
+		        System.out.println("sdaf"+result);
+		    }catch(DivideByMinusException e){
+		    	
+		    	System.out.println(e.getMessage());
+		    }
+		    
+	 }
+	 
+	 public static int divide(int x,int y)throws DivideByMinusException{
+		 
+		 if(y<0){
+			 
+			 throw new DivideByMinusException("dividebyminus");//自定义的exception类，在符合条件时，需要throw 出一个实例化的 对象，
+		 }
+		 
+		 int result=x/y;
+		 return result;
+		 
+	 }
+}
+
+
