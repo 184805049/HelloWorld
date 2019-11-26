@@ -2,19 +2,20 @@ package species;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
 
-public class LianTong extends sorts{
+public class HashSetLT extends sorts{
        
 	private String phoneNumber;
 	private String callTo;
-	private ArrayList communicationRecords;
+	private HashSet communicationRecords;
 	
-	public LianTong (String phoneNumber){
+	public HashSetLT (String phoneNumber){
 		
 		this.phoneNumber=phoneNumber;
-		this.communicationRecords=new ArrayList();
+		this.communicationRecords=new HashSet();
 	}
 	//模拟通话记录的生成
 	public void generateCommunicateRecord(){
@@ -30,7 +31,7 @@ public class LianTong extends sorts{
 	    		  //被叫号码
 	    		  this.callTo=this.getCallToPhoneNumber();
 	    		  //插入通话记录
-	    		  this.communicationRecords.add(new String(this.phoneNumber+
+	    		  this.communicationRecords.add (new String(this.phoneNumber+
 	    				  ","+timeStart+","+timeEnd+","+this.callTo+";"));
 	    	  }
 	      

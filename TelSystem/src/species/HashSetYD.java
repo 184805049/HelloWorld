@@ -4,15 +4,15 @@ package species;
 import java.text.DateFormat;
 import java.util.*;
  
-public class YiDong extends sorts {
+public class HashSetYD extends sorts {
 	private String phoneNumber;
 	private String callTo;
-	private ArrayList communicationRecords;
+	private HashSet communicationRecords;
 	
-	public YiDong (String phoneNumber){
+	public HashSetYD (String phoneNumber){
 		
 		this.phoneNumber=phoneNumber;
-		this.communicationRecords=new ArrayList();
+		this.communicationRecords=new HashSet();
 	}
 	
 	//模拟通话记录的生成
@@ -33,8 +33,8 @@ public class YiDong extends sorts {
 		    		  //被叫号码
 		    		  this.callTo=this.getCallToPhoneNumber();
 		    		  //插入通话记录
-		    		  this.communicationRecords.add(new String(this.phoneNumber+
-		    				  ","+timeStart+","+timeEnd+","+this.callTo+";"));
+		    		  this.communicationRecords.add(this.phoneNumber+
+		    				  ","+timeStart+","+timeEnd+","+this.callTo+";");
 		    	  }
 		      
 			
@@ -60,12 +60,13 @@ public class YiDong extends sorts {
 	    public void printDetails(){
 	    	  //将所有的记录转化成字符串型的数据类型，便于分割出来一条条的信息
 	    	 
-	    	 
-	    	 for(int i=0;i<communicationRecords.size();i++){
+	    	Iterator it=communicationRecords.iterator();
+	    	while(it.hasNext()){
 	    		 
+	    		
 	    		 System.out.println("---------------------------------------");
 	    		 //System.out.println("message i"+recordArray[i]);
-	    		 String[] recordField=((String)communicationRecords.get(i)).split(",");
+	    		 String[] recordField=((String)it.next()).split(",");
 	    		 
 	    		 System.out.println("主叫："+recordField[0]);
 	    		 System.out.println("被叫："+ recordField[3]);
